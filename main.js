@@ -30,8 +30,8 @@ class TrayIoTest {
     await test.clickOnElement(By.css('li.Nav-Item___38VFfN:nth-child(7) > a:nth-child(1)'));
     console.log('Login clicked');
     await driver.wait(until.titleIs('tray.io | Login'), 1000);
-    await test.typeIntoElement(By.name('username'), 'seylancinar@gmail.com');
-    await test.typeIntoElement(By.name('password'), ['12345678', Key.RETURN]);
+    await test.typeIntoElement(By.name('username'), process.env.TRAYIO_USERNAME);
+    await test.typeIntoElement(By.name('password'), [process.env.TRAYIO_PASSWORD, Key.RETURN]);
 
     await test.clickOnElement(By.css('.Page-navigation-button___2nr8D6'));
     console.log('Create Workflow button found');
